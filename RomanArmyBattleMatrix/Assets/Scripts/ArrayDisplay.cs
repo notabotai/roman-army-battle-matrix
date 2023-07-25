@@ -6,7 +6,7 @@ public class ArrayDisplay : MonoBehaviour
 {
     public int[,] myArray = new int[2, 2] { { 1, 2 }, { 3, 4 } };
 
-    public int[,] myArrayTwo = new int[2, 2]; 
+    public int[,] myArrayTwo = new int[2, 2] { { 2, 3 }, { 4, 5 } }; 
     void Start()
     {
 
