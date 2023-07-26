@@ -7,6 +7,12 @@ public class ArrayDisplay : MonoBehaviour
     public int[,] myArray = new int[2, 2] { { 1, 2 }, { 3, 4 } };
 
     public int[,] myArrayTwo = new int[2, 2] { { 2, 3 }, { 4, 5 } }; 
+
+    public int topLeft;
+    public int topRight;
+    public int bottomLeft;
+    public int bottomRight; 
+
     void Start()
     {
 
@@ -23,7 +29,10 @@ public class ArrayDisplay : MonoBehaviour
         // Update is called once per frame
         void Update()
         {
-
+            topLeft = myArray[1,1];
+            topRight = myArray[1,2];
+            bottomLeft = myArray[2,1];
+            bottomRight = myArray[2,2];
         }
     }
 }
