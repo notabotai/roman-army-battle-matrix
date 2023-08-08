@@ -9,20 +9,17 @@ public class ArrayDisplay : MonoBehaviour
 
     public int[,] myArray = new int[2, 2] { { 1, 2 }, { 3, 4 } };
 
-<<<<<<< HEAD
+
     public int[,] myArrayTwo = new int[2, 2] { { 2, 3 }, { 4, 5 } };
 
 
-    public TextMeshPro One, Two, Three, Four;
-
-=======
-    public int[,] myArrayTwo = new int[2, 2] { { 2, 3 }, { 4, 5 } }; 
+    public TextMeshPro One, Two, Three, Four; 
 
     public int topLeft;
     public int topRight;
     public int bottomLeft;
     public int bottomRight; 
->>>>>>> f1887e3db7a2c873ad86dda6511f61d7427a6d35
+
 
     void Start()
     {
