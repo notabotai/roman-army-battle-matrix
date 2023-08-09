@@ -93,7 +93,11 @@ public class MatrixIdentity : MonoBehaviour
     {
         if (isPowerUp)
         {
-            solverRef.GetComponent<MatrixFunctions>().Multiply(Definition, playerArray.GetComponent<MatrixIdentity>().Definition);
+            solverRef.GetComponent<Animations>().result = solverRef.GetComponent<MatrixFunctions>().Multiply(Definition, playerArray.GetComponent<MatrixIdentity>().Definition, gameObject, playerArray);
+
+            solverRef.GetComponent<Animations>().ResultCheck();
+
+            //StartCoroutine(solverRef.GetComponent<Animations>().ExecuteAnimations(gameObject, playerArray));
         }
 
         if (isAttacker && enemyMatrix != null)
@@ -146,6 +150,41 @@ public class MatrixIdentity : MonoBehaviour
 
                 counter++;
             }
+        }
+    }
+
+    public void ReDetermineSize()
+    {
+        switch (dimensions)
+        {
+            case "1x2":
+
+                size = "1x2";
+
+                Definition = new int[1, 2];
+
+                break;
+
+            case "2x1":
+
+                size = "2x1";
+
+                Definition = new int[2, 1];
+
+                break;
+
+            case "2x2":
+
+                size = "2x2";
+
+                Definition = new int[2, 2];
+
+                break;
+
+            default:
+
+                size = string.Empty;
+                break;
         }
     }
 

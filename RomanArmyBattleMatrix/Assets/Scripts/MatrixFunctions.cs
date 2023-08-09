@@ -15,6 +15,8 @@ public class MatrixFunctions : MonoBehaviour
 
     public GameObject enemyMatrixRef;
 
+    public GameObject solverRef;
+
     void Start()
     {
 
@@ -26,7 +28,7 @@ public class MatrixFunctions : MonoBehaviour
 
     }
 
-    public int[,] Multiply(int[,] a, int[,] b)
+    public int[,] Multiply(int[,] a, int[,] b, GameObject PowerUp, GameObject Player)
     {
         if (a.GetLength(1) == b.GetLength(0))
         {
@@ -40,7 +42,9 @@ public class MatrixFunctions : MonoBehaviour
                 }
             }
 
-            ShowAnswerArray(a, b, result);
+            //ShowAnswerArray(a, b, result);
+
+            StartCoroutine(solverRef.GetComponent<Animations>().ExecuteAnimations(PowerUp, Player));
 
             return result;
         }
@@ -88,7 +92,7 @@ public class MatrixFunctions : MonoBehaviour
         }
     }
 
-    private void ShowAnswerArray(int[,] x, int[,] y, int[,] resultRef)
+    public void ShowAnswerArray(int[,] x, int[,] y, int[,] resultRef)
     {
         if (x.GetLength(0) == 2 && y.GetLength(1) == 1)
         {
